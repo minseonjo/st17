@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상대경로</title>
+</head>
+<body>
+    <h1>상대경로</h1>
+    <ul>
+        <li>./ 현재 디렉토리</li>
+        <li>생략 현재 디렉토리</li>
+        <li>../ 상위 디렉토리</li>
+        <li>/ 루트 디렉토리(최상위 디렉토리)</li>
+        <li>경로1/경로2/파일명.확장자   / --> 경로 폴더 아래</li>
+    </ul>
+    <hr>
+    <h2>상대경로 연습</h2>
+    <p>현재 작성 중인 html 문서의 위치 <br>
+    최상위 밑 html 폴더 밑에 상대경로연습.html <br>
+    /html/상대경로연습.html
+    </p>
+    <div>
+        <pre>
+            /
+            └html
+              └asset
+                └logo.png
+              └상대경로연습.html
+        </pre>
+    </div>
+    <hr>
+    <!-- 
+    img
+    src="url"
+    alt="
+    - 검색엔진의 키워드
+    - 이미지의 정보를 텍스트로 제공
+    - 이미지에 문제가 발생했을 때 브라우저에 표시될 대체텍스트" 
+    - 이미지 정보력 없으면 빈 문자"
+    -->
+    <!-- 현재 html문서 : /html/상대경로연습.html 
+    보여줄 이미지 : /html/asset/logo.png-->
+    <img src="logo.png" alt="이미지 연습">
+    <!-- html 문서가 있는 폴더에서 logo.png를 찾아서 표시 -->
+    <!-- 현재 폴더 밑에 ./
+    asset 폴더 asset
+    밑에 logo.png -->
+    <img src="./asset/logo.png" alt="이미지 연습">
+    <!-- 현재 폴더 밑에 asset 폴더 밑에 logo.png 찾아서 표시 -->
+    <!-- 
+    / 루트
+    html/ html 밑
+    asset/ asset 밑
+    logo.png
+    -->
+    <img src="/html/asset/logo.png" alt="이미지 연습">
+</body>
+</html>
