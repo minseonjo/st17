@@ -29,6 +29,73 @@
                 <input type="color">
             </p>
         </fieldset>
+        <fieldset>
+            <legend>선택상자</legend>
+            <div>
+                <label for="color1">빨강</label>
+                <input type="checkbox" name="color" id="color1" value="1">
+                <label for="color2">파랑</label>
+                <input type="checkbox" name="color" id="color2" value="2">
+                <label for="color3">노랑</label>
+                <input type="checkbox" name="color" id="color3" value="3">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>라디오버튼</legend>
+            <label for="test1">빨강</label>
+            <input type="radio" name="test" id="test1">
+            <label for="test2">파랑</label>
+            <input type="radio" name="test" id="test2">
+            <label for="test3">노랑</label>
+            <input type="radio" name="test" id="test3">
+        </fieldset>
+        <div>
+            <input type="reset">
+            <input type="submit">
+            <input type="reset" value="취소">
+            <input type="submit" value="확인">
+            <input type="button" value="주소찾기">
+            <input type="file">
+            <input type="file" value="찾아보기">
+        </div>
+        <div>
+            <button>제목</button>
+            <button type="submit">확인</button>
+            <button type="reset">취소</button>
+            <button type="button">제목</button>
+            <button type="button">
+                <img src="asset/logo.png" alt="" width="50">
+            </button>
+        </div>
+        <style>
+            button, [type="submit"]{
+                background-color: #f00;
+            }
+        </style>
+        <div>
+            <select name="" id="">
+                <option value="">패밀리사이트</option>
+                <option value="">네이버</option>
+                <option value="">구글</option>
+                <option value="">다음</option>
+            </select>
+            <select name="" id="" multiple>
+                <option value="">패밀리사이트</option>
+                <option value="">네이버</option>
+                <option value="">구글</option>
+                <option value="">다음</option>
+            </select>
+        </div>
+        <div>
+            <textarea name="" id=""></textarea>
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <textarea name="" id="" disabled readonly>가나다라마바사</textarea>
+        </div>
     </form>
+    <style>
+        div, fieldset{
+            margin-bottom: 50px;
+        }
+    </style>
 </body>
 </html>
