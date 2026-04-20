@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 우선순위</title>
+    <style>
+        /* 문서 내 모든 p 찾아서 */
+        /* p{color: #f00;} */
+        /* 문서 내 모든 div 태그를 선택해서 */
+        /* 
+        우선순위
+        조상의 값을 상속
+        조상 동일 속성, 본인 동일 속성 지정하면 본인한테 지정한 속성 적용
+        동일 요소에 동일 속성 다른 값, 뒤에 코딩된 값이 우선
+        우선순위 값이 높은 선택자가 우선
+        태그 1, 클래스 10, 아이디 100, 인라인 1000
+        */
+        .box p{color: dodgerblue !important} /* 10+1=11 */
+        .title{color: #0f0;} /* 10 */
+        p{color: #0ff;} /* 1 */
+        div{color: #f00;} /* 1 */
+        div{color: #00f;} /* 1 */
+        p{color: #000;} /* 1 */
+    </style>
+</head>
+<body>
+    <!-- p>lorem -->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil rerum ducimus, laboriosam modi voluptatem minus ipsam dicta aliquam sequi ut, cupiditate enim? Quas odio nam est a dolorum voluptas voluptatibus!</p>
+    <!-- div.box>p+p.title -->
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, voluptate!</p>
+        <p class="title" style="color: #86f;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, quo.</p>
+    </div>
+</body>
+</html>
