@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-shadow</title>
+    <style>
+        /* 모든 요소에 여백을 0으로 */
+        *{margin: 0; padding: 0;}
+        /* body 태그에 왼쪽 오른쪽 50px씩 바깥여백을 지정 */
+        body{
+            /* margin: 상하 좌우 */
+            margin: 0 50px;
+            /* box-sizing: border-box; 상속하지 않는다 */
+        }
+        .box{
+            /* width, height 지정한 값이 콘텐츠 영역으로 지정 */
+            box-sizing: content-box;
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            margin: 50px 0;
+
+            /* box-shadow */
+            /* box-shadow: x-offset y-offset blur #000000; */
+            box-shadow: 10px 10px 0px #000000;
+        }
+        .box1{
+            box-shadow: 0px 0px 10px #333;
+            background-color: #fff;
+
+        }
+        .box2{
+            /* 다중 그림자 구분자는 ,(콤마) */
+            box-shadow: 
+            4px 4px 2px #f00,
+            8px 8px 2px #0f0,
+            12px 12px 2px #00f;
+        }
+    </style>
+</head>
+<body>
+    <h1>box-shadow</h1>
+    <p>요소(element, 태그)에 그림자 효과를 줍니다.</p>
+    <!-- .box.box$*3>{box$} -->
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+</body>
+</html>
