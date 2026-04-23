@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스 링크관련</title>
+    <style>
+        /* color 글자색 */
+        li{color: #68f;}
+        /* a태그 color 관련 속성을 상속받지 X */
+        /* :link{color: #333;} */
+        /* 
+        a태그
+        기본값 : 글자 파란색, 밑줄
+        방문한 적 있는 사이트 href : 보라색, 밑줄
+        active 상태(누른 상태, 클릭 상태) : 빨간색, 밑줄
+        */
+        /* a{color: #0f0;} */
+        /* 
+        a태그 요소의 상태에 따라서 설정을 지정
+        link
+        visited
+        hover
+        active
+        focus
+
+        순서 지키지 않으면 적용되지 않을 수 있음 
+        */
+        /* a:link{color: #333;} */
+        /* a:visited{color: #333;} */
+        /* 마우스를 해당 요소 위에 올렸을 때 */
+        /* a:hover{color: #68f;} */
+        /* a:active{color: #333;} */
+        /* 중복되는 값 먼저 선언 */
+        a:link,
+        a:visited,
+        a:active{
+            color: #333;
+            /* text-decoration 밑줄 문자 */
+            text-decoration: none;
+        }
+        a:hover{
+            color: #68f;
+            text-decoration: underline;
+        }
+        a:focus{
+            color: #f00;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- ul>li*3>a>{메뉴$} -->
+    <!-- 순서 없는 목록 -->
+    <ul>
+        <li>가상클래스</li>
+        <li><span>가상클래스</span></li>
+        <li><a href="http://www.naver.com">메뉴1</a></li>
+        <li><a href="http://www.google.com">메뉴2</a></li>
+        <li><a href="http://www.daum.net">메뉴3</a></li>
+    </ul>
+</body>
+</html>

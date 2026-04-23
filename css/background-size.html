@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-size</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{margin: 30px;}
+        .box{
+            /* 모든 클래스 box는 크기 계산법을 border부터 포함하게 설정 */
+            box-sizing: border-box;
+            /* 수평크기는 50%, 수직크기는 브라우저의 반 크기로 설정 */
+            width: 50%;
+            height: 50vh;
+            /* 최소너비는 500px을 유지 */
+            min-width: 500px;
+            background-color: #ccc;
+            /* 배경색이 포함되지 않는 여백을 4군데 모두 20px */
+            /* background-color는 border부터 */
+            margin: 20px;
+            /* 
+            bg.jpg를 반복하지 않고 요소의 가운데를 기준으로 배치되게 배경 이미지로 설정
+            */
+            background-image: url(images/bg.jpg);
+            /* background-image: url(images/img1.png); */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .box1{
+            /* background-size: 80% 50%; */
+            /* 숫자 하나만 쓰면 비율 유지 */
+            /* background-size: 80%; */
+            /* 너비값 300px일 때 가로세로 비율 유지 */
+            /* background-size: 300px; */
+            /* width: 100%; */
+            width: auto;
+            height: 100vh;
+            /* background-position: bottom center; */
+            /* background-position: 0 0; */
+            /* background-position: right top; */
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+        }
+        .box2{
+            /* 배경 이미지가 잘리지 않고 요소에 표시될 수 있도록 이미지 조절 */
+            background-size: contain;
+        }
+        .box3{
+            /* 배경 이미지가 요소를 꽉 채워서 cover할 수 있는 수평/수직 크기 중 최적의 크기 */
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    </div>
+</body>
+</html>

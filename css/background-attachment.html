@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background-attachment</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        /* height: 300px; */
+        /* box-sizing: content-box; */
+        /* 
+        width/height 계산법을 content 영역으로 크기 지정 
+        */
+        box-sizing: border-box;
+        /* 
+        브라우저의 크기만큼 vh
+        */
+        height: 100vh;
+        /* 
+        width/height 계산법을
+        border + padding + content 크기를 포함해서 지정
+        */
+        border: 10px dotted rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        background-color: #ff3;
+        font-size: 2em;
+        text-align: left;
+        /* height: vh; */
+
+        background-image: url(images/frame.png);
+        background-repeat: no-repeat;
+        background-position: right top;
+      }
+      /* 
+      배경 이미지가 요소에 붙어있는 방법 설정
+      background-attachment: scroll;
+      scroll : 기본값, 요소와 함께 스크롤되어라.
+      
+      background-attachment: fixed;
+      배경이 브라우저에 fixed 고정되어라.
+      배경 이미지의 기준이 브라우저가 된다.
+      */
+    
+      .box1 {
+        width: 500px;
+        /* 요소와 함께 스크롤링, 기본값 */
+        background-attachment: scroll;        
+      }
+      .box2 {
+        width: 80%;
+        background-attachment: fixed;
+        /* background-position을 브라우저 기준 */
+        background-position: left center;
+      }
+      .box3 {
+        width: 10em;
+      }
+      .box4 {
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .container-wrap>.box.box$*3>{box$} -->
+    <div class="container-wrap">
+      <div class="box box1">box1</div>
+      <div class="box box2">box2</div>
+      <div class="box box3">box3</div>
+      <div class="box box4">box4</div>
+    </div>
+  </body>
+</html>
