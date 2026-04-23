@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-attachment 2</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .container-wrap{
+            /* margin: 0 50px; */
+            margin: 0;
+            background-color: #ccc;
+        }
+        .container-wrap > section{
+            /* 부모 요소의 콘텐츠 영역을 다 쓰겠다 */
+            width: 100%;
+            /* margin, border, padding 제외한 영역 다 쓰겠다 */
+            /* width: auto; */
+            /* 부모의 font-size 크기만큼 */
+            padding: 1em;
+            /* box-sizing: content-box; 기본값 */
+            box-sizing: border-box;
+            /* 브라우저의 viewport 높이만큼 다 차지 */
+            height: 100vh;
+            /* margin: 0 -50px; */
+            background-image: url(images/bg.jpg);
+            background-image: url(images/sun.png);
+            /* background-image: url(images/flower.png); */
+            background-repeat: no-repeat;
+            background-color: #ac9;
+        }
+        .container-wrap > .section1{
+            /* background-color: #f86; */
+            background-color: rgba(255, 136, 102, 0.2);
+            background-position: 0 0;
+            /* background-image: none; */
+            background-attachment: scroll;
+        }
+        .container-wrap > .section2{
+            /* background-color: #68f; */
+            background-color: rgba(102, 136, 255, 0.2);
+            /* background-position: right bottom; */
+            background-position: center;
+            /* background-attachment: scroll; */
+            background-attachment: fixed;
+            /* 
+            fixed
+            배경 이미지의 기준이 요소가 아니라 브라우저가 된다
+            background-position: right bottom;
+            브라우저의 오른쪽 아래를 기준으로 이미지가 배치
+            background-position: center;
+            브라우저를 기준으로, 배경 이미지를 가운데 기준으로 배치
+            */
+        }
+        .container-wrap > .section3{
+            /* background-color: #6f8; */
+            background-color: rgba(102, 255, 136, 0.2);
+            /* background-position: center center; */
+            background-position: 100% 0;
+            /* background-position: center bottom; */
+            /* background-image: none; */
+            background-attachment: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-wrap">
+        <!-- section.section$*3>p.title>{section$} -->
+        <section class="section1">
+            <p class="title">section1</p>
+        </section>
+        <section class="section2">
+            <p class="title">section2</p>
+        </section>
+        <section class="section3">
+            <p class="title">section3</p>
+        </section>
+    </div>
+</body>
+</html>
