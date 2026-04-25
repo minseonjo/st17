@@ -6,13 +6,16 @@
     <title>가상클래스 hover</title>
     <style>
         *{margin: 0; padding: 0;}
+        body{
+            margin: 30px;
+        }
         .product , .product>div{
             box-sizing: border-box;
         }
         .product{
             width: 300px;
             padding: 30px;
-            background-color: #ccc;
+            /* background-color: #ccc; */
             margin-bottom: 30px;
         }
         /* 자식의 수평크기는 부모의 콘텐츠 영역의 크기 */
@@ -20,10 +23,38 @@
         .product .thumb{
             background-color: #f68;
             min-height: 200px;
+            /* 
+            상품 이미지와 상품 설명 사이에 여백
+            background가 포함되지 않는 여백 -> margin
+            */
+            margin-bottom: 30px;
         }
         .product .desc{
             background-color: #68f;
         }
+        /* 
+        가상클래스는 웹에서 자주 발생하는 상태를 선택자로 만들어 둔 것
+        : hover 마우스를 어떤 요소 위에 올려둔 상태
+        */
+        /* 
+        선택자
+        마우스를 상품 설명이나, 상품 이미지에 위치시키면, 상품 이미지에 그림자 표시
+        마우스를 요소에 위치시키면 : hover
+        요소 -> 상품 이미지 .thumb, 상품 설명 .desc
+        -> .thumb, .desc의 부모인 .product
+        동작 -> 상품 이미지에 그림자 표시
+        -> 상품 이미지 .thumb
+        -> 그림자 표시 box-shadow
+        */
+        .product:hover .thumb{
+            box-shadow: 0px 0px 20px rgba(102, 102, 102, 1);
+        }
+        /* 
+        .product :hover .thumb
+        product의 후손 요소에 hover하면, thumb 요소의 스타일을 바꿔라
+        .product:hover .thumb
+        product 본인에 hover하면, thumb 요소의 스타일을 바꿔라
+        */
     </style>
 </head>
 <body>
