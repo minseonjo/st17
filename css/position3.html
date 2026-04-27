@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position3</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="thumb">
+            <img src="images/test-img.png" alt="">
+            <span class="like">좋아요</span>
+            <span class="sale-box">10%</span>
+        </div>
+    </div>
+
+    <style>
+        *{margin: 0; padding: 0;}
+        .wrap{
+            margin: 100px 50px;
+            background-color: #cc0;
+        }
+        .thumb{
+            background-color: #f00;
+        }
+        .thumb .like{
+            background-color: #86f;
+        }
+        .thumb .sale-box{
+            background-color: #f68;
+        }
+
+        /* 좋아요, 10% 요소의 크기를 w 50px, h 50px */
+        .thumb span{width: 50px; height: 50px;}
+        /* span 인라인 너비/높이 지정하지 못했던 문제 해결 */
+        .thumb span{display: block;}
+        /* 
+        좋아요, sale-box의 위치를 지정 
+        left/right/top/bottom
+        position: relative, absolute, fixed
+        */
+        .thumb span{
+            position: absolute;
+            /* position: relative는 문서상 원래 자기 위치가 그대로 유지 */
+        }
+        /* 가까운 조상 중에 position(static 제외한)이 설정되어 있는 요소 기준을 지정 */
+        .thumb{
+            position: relative;
+            /* normal flow에서 벗어나지 않고(static, relative) absolute의 기준 요소가 될 수 있는 */
+        }
+        /* 좋아요는 이미지의 왼쪽 위를 기준으로 위치 */
+        .thumb span.like{
+            left: 10px;
+            top: 10px;
+        }
+        /* sale-box는 이미지의 오른쪽 위를 기준으로 위치 */
+        .thumb span.sale-box{
+            /* right: 0px; */
+            right: 10px;
+            top: 10px;
+        }
+        /* .thumb 크기를 부모 요소의 4단 배치가 되게 하고 싶어요 */
+        .thumb{
+            width: 25%;
+        }
+        /* 이미지가 커서 .thumb보다 커진 문제가 생김 */
+        .thumb img{
+            width: 100%;
+            /* 부모의 콘텐츠 영역을 다 사용할 거예요 */
+        }
+        /* img 요소는 인라인 요소라서 태그와 태그 사이의 줄바꿈을 한 글자로 인식하는 문제가 생김 */
+        .thumb img{
+            display: block;
+        }
+    </style>
+</body>
+</html>
