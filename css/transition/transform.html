@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body{margin: 50px;}
+        .exam-wrap{
+            background-color: #3cc;
+            border: 1px solid #000;
+            padding: 30px;
+        }
+        .img-wrap{
+            background-color: beige;
+            border: 1px solid #f00;
+            width: 300px;
+            overflow: hidden;
+        }
+        .img-wrap img{
+            /* opacity: 0.5; */
+            /* 부모의 너비에 따라 이미지의 크기가 자동으로 조절 */
+            width: 100%;
+            /* 가로 세로 비율 맞춰주세요 */
+            /* 기본값 */
+            height: auto;
+            display: block;
+        }
+        .img-wrap:hover img{
+            /* 크기 1.5배 */
+            transform: scale(1.5);
+            /* transform의 기준점 */
+            transform-origin: center top;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-wrap">
+        <div class="img-wrap">
+            <img src="../images/test-img.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
