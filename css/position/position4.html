@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position4</title>
+    <style>
+        /* reset */
+        *{margin: 0; padding: 0;}
+        /* 블릿 없애기 */
+        ol,ul{list-style: none;}
+
+        .wrap{
+            background-color: beige;
+            margin: 30px;
+        }
+
+        /* 상품카드 썸네일 */
+        .ec-base-product{}
+        .ec-base-product .prdList{
+            background-color: #333;
+            border: 1px solid #f00;
+        }
+        /* float 단처리 레이아웃 */
+        /* float가 지정된 자식 요소를 인식하지 못하는 문제 해결 */
+        .ec-base-product .prdList::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .prdList li{
+            /* 1줄의 4단으로 상품 표시 */
+            /* 단처리 */
+            /* normal flow에서 벗어남 -> 부모가 인식 못 함 */
+            float: left;
+            width: 25%;
+            /* 테스트용 border를 width에 포함 */
+            box-sizing: border-box;
+            background-color: #cc0;
+            border: 1px solid #000;
+        }
+        .prdList li .prdList__item{
+            /* .sale_box, .likeButton 기준 */
+            position: relative;
+        }
+        .prdList li .prdList__item .thumbnail{}
+        .prdList li .prdList__item .thumbnail img{
+            opacity: 0.5; /* 삭제 */
+            /* 이미지를 자신의 부모의 크기에 맞게 자동 조절 되게 하고 싶어요 */
+            /* 이미지가 부모의 콘텐츠 너비를 다 사용 */
+            /* 이미지가 부모의 콘텐츠 너비에 맞게 자동 조절 */
+            width: 100%;
+            display: block;
+        }
+
+        /* 상품아이템의 오른쪽 위 */
+        /* 
+        누가? .sale_box
+        배치법? position: absolute;
+        : 기준이 되는 요소가 다른 요소
+        위치? 오른쪽 위 right: 5px; top: 5px;
+        기준? 상품아이템 .prdList__item
+        기준이 되는 요소에게 position: relative;
+        */
+        .prdList li .prdList__item .thumbnail .sale_box{
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        /* 상품아이템의 왼쪽 위 */
+        /* 
+        누가? .likeButton
+        배치법? position: absolute;
+        : 기준이 되는 요소가 다른 요소
+        위치? 왼쪽 위 left: 5px; top: 5px;
+        기준? 상품아이템 .prdList__item
+        기준이 되는 요소에게 position: relative;
+        */
+        .prdList li .prdList__item .thumbnail .likeButton{
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+    1줄 4단 상품, 상품카드 좋아요, 세일 이미지 겹쳐서
+
+    float 단처리 레이아웃
+    position, left/right/top/bottom 요소를 배치
+    -->
+    <div class="wrap">
+        <!-- .ec-base-product -->
+        <div class="ec-base-product">
+            <!-- ul.prdList>li*6>div.prdList__item>.thumbnail>img+.sale_box+.likeButton -->
+            <ul class="prdList">
+                <li>
+                    <div class="prdList__item">
+                        <div class="thumbnail">
+                            <img src="../images/test-img.png" alt="">
+                            <div class="sale_box">10%</div>
+                            <div class="likeButton">like</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="prdList__item">
+                        <div class="thumbnail">
+                            <img src="../images/test-img.png" alt="">
+                            <div class="sale_box">10%</div>
+                            <div class="likeButton">like</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="prdList__item">
+                        <div class="thumbnail">
+                            <img src="../images/test-img.png" alt="">
+                            <div class="sale_box">10%</div>
+                            <div class="likeButton">like</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="prdList__item">
+                        <div class="thumbnail">
+                            <img src="../images/test-img.png" alt="">
+                            <div class="sale_box">10%</div>
+                            <div class="likeButton">like</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="prdList__item">
+                        <div class="thumbnail">
+                            <img src="../images/test-img.png" alt="">
+                            <div class="sale_box">10%</div>
+                            <div class="likeButton">like</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="prdList__item">
+                        <div class="thumbnail">
+                            <img src="../images/test-img.png" alt="">
+                            <div class="sale_box">10%</div>
+                            <div class="likeButton">like</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

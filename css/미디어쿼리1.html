@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리1 media query</title>
+    <style>
+        /* 데스크탑 기준 max-width */
+        body{
+            background-color: #ccc;
+            font-size: 16px;
+        }
+        body::before{
+            content: "데스크탑 미디어쿼리";
+        }
+        
+        /* max-width 적을 때 단위 반드시 써야 함 */
+        @media(max-width: 1400px){
+            body{
+                background-color: #fcc;
+                /* 상속받아서 사용 */
+                /* font-size: 16px; */
+            }
+            body::before{
+                content: "최대 크기 1400px인, 즉 1400px 이하 모니터";
+            }
+        } /* //@media(max-width: 1400px) 미디어쿼리 마감 */
+
+        @media(max-width: 1200px){
+            body{
+                background-color: #cfc;
+            }
+            body::before{
+                content: "최대 크기 1200px인, 즉 1200px 이하 모니터";
+            }
+        } /* //@media(max-width: 1200px) 미디어쿼리 마감 */
+        
+        @media(min-width: 1000px) and (max-width: 1200px){
+            
+        } /* //@media(min-width: 1000px) and (max-width: 1200px) 미디어쿼리 마감 */
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

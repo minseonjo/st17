@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition2</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            margin: 100px;
+        }
+        .box{
+            /* 글자색을 magenta */
+            color: magenta;
+            /* 
+            글자 크기를 html 요소를 기준으로 2배가 되게 해주세요
+            em 부모 기준
+            rem 루트 기준 */
+            font-size: 3rem;
+            /* 글자를 진하게 쓰세요 */
+            /* bold 700 */
+            /* font-weight: bold; */
+            font-weight: 700;
+            /* 자간을 3px(고정 크기) */
+            letter-spacing: 3px;
+            /* 자간을 한 글자가 들어올 수 있는 정도로(상대 크기) */
+            /* letter-spacing: 1em; */
+            /* 배경색을 #6f8 */
+            background-color: #6f8;
+            /* 해당 요소의 인라인 요소를 요소의 가운데 정렬 */
+            /* 문단 정렬을 가운데 정렬 */
+            text-align: center;
+        }
+        .box:hover{
+            /* 글자색을 magenta */
+            color: cyan;
+            /* 
+            글자 크기를 html 요소를 기준으로 2배가 되게 해주세요
+            em 부모 기준
+            rem 루트 기준 */
+            font-size: 5rem;
+            /* 글자를 진하게 쓰세요 */
+            /* bold 700 */
+            /* font-weight: bold; */
+            font-weight: 400;
+            /* 자간을 3px(고정 크기) */
+            letter-spacing: 10px;
+            /* 자간을 한 글자가 들어올 수 있는 정도로(상대 크기) */
+            /* letter-spacing: 1em; */
+            /* 배경색을 #6f8 */
+            background-color: #f68;
+            /* 해당 요소의 인라인 요소를 요소의 가운데 정렬 */
+            /* 문단 정렬을 가운데 정렬 */
+            text-align: right;
+            
+            /* transition */
+            /* transition: all 0.3s; */
+            
+            /* 수치값에 해당하는 것만 자연스럽게 바꿔줄 수 있음 */
+            /* transition: text-align 0.3s; */
+            
+            /* 내가 바꾸고 싶은 것만 바꿀 수 있음 (구분자는 콤마)*/
+            transition: font-size 0.3s, font-weight 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        SALE
+    </div>
+</body>
+</html>
