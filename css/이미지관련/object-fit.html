@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object-fit</title>
+</head>
+<body>
+    <img src="../images/test-img.png" alt="" class="exam1">
+    <img src="../images/test-img.png" alt="" class="exam2">
+    <img src="../images/test-img.png" alt="" class="exam3">
+    <style>
+        /* 이미지 크기를 너비를 기준으로 변경 (나머지 값들은 auto -> 가로세로 비율 맞춰줌) */
+        .exam1{
+            width: 200px;
+            /* height: auto; 기본값 */
+            /* height: 200px; */
+        }
+        /* 이미지 크기를 높이를 기준으로 변경 */
+        .exam2{
+            height: 300px;
+        }
+        /* 이미지를 특정 크기로 표시해야할 때 */
+        .exam3{
+            background: #fcc;
+            width: 400px;
+            height: 200px;
+            /* 가로세로 비율 상관없이 object 영역에 다 보이게 채워줘 (기본값) */
+            object-fit: fill;
+            /* 이미지의 가로세로 비율을 유지하고 다 보여줘 (남는 영역은 여백) */
+            object-fit: contain;
+            /* 이미지를 가로세로 비율을 유지하고 object 크기에 가득 채워 */
+            object-fit: cover;
+            object-position: center top;
+        }
+    </style>
+</body>
+</html>

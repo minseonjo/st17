@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 반응형으로 가져오기 - position</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{margin: 50px;}
+        .media-box{
+            /* 사이트에서 동영상 보여주는 데 최적 크기 */
+            max-width: 600px;
+        }
+        .media-box .iframe-wrap{
+            /* 기준 요소 */
+            position: relative;
+            /* 
+            동영상 16:9 9/16 = 56.25%
+            동영상 4:3 3/4 = 75%
+            padding -> 부모의 너비를 기준으로 해서 크기를 제한할 수 있음
+            */
+            padding-top: 56.25%;
+            background-color: #f00;
+
+        }
+        .media-box .iframe-wrap iframe{
+            /* 기준 요소 .media-box .iframe-wrap */
+            position: absolute;
+            /* 왼쪽 위부터 요소 시작 */
+            left: 0;
+            top: 0;
+            /* 기준 요소가 크기의 기준이 된다 */
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="media-box">
+        <div class="iframe-wrap">
+            <!-- iframe의 width, height 지우기 -->
+            <iframe src="https://www.youtube.com/embed/Kz2BsKX04ek?si=M-79b86FQKQ5XYWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>
