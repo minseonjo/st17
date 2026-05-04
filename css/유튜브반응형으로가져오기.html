@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 반응형으로 가져오기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{margin: 50px;}
+        /* 부모의 크기가 얼마가 되든 상관없이 768px 이상으로는 커지지 말아라 */
+        .media-box{max-width:768px;}
+        .iframe-wrap{
+            width: 100%;
+            /* 갖고오는 동영상의 비율에 맞게 */
+            aspect-ratio: 16/9;
+            background-color: #ccc;
+        }
+        .iframe-wrap iframe{
+            /* 부모의 너비를 가져다 쓸 수 있게 */
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="media-box">
+        <div class="iframe-wrap">
+            <iframe src="https://www.youtube.com/embed/Kz2BsKX04ek?si=M-79b86FQKQ5XYWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>

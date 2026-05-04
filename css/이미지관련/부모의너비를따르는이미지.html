@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모의 너비를 따르는 이미지</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .wrap{margin: 30px;}
+        .img-wrap{
+            /* width: auto; */
+            background-color: #f00;
+        }
+        /* 부모의 너비랑 상관없이 이미지는 항상 부모의 너비를 따라서 자동 조절 */
+        .img-wrap img{
+            /* 부모의 콘텐츠 영역을 다 사용 */
+            width: 100%;
+            /* 이미지의 가로세로 비율을 유지 */
+            /* height: auto; */
+            display: block;
+            opacity: 0.5; /* 테스트용 */
+        }
+
+        /* 부모의 너비를 따르지만 자신의 크기보다는 더 커지지 않아야 할 때 */
+        .max-img{
+            width: 80%;
+            background-color: #0f0;
+        }
+        .max-img img{
+            opacity: 0.5; /* 테스트용 */
+            /* 부모의 너비를 따라라 */
+            /* width: 100%; */
+            /* 부모의 너비를 따르지만 자기 크기보다는 커지지 말아라 */
+            /* 
+            width: 100%와 max-width: 100% 같이 쓰면 max-width: 100% 적용되지 않는다
+            width: auto라고 써주어야 하지만, 기본값이라 굳이 작성하지 않아도 된다 
+            */
+            /* width: auto; */
+            max-width: 100%;
+        }
+
+        /* 부모의 높이를 따르는 이미지 */
+        .img-wrap2{
+            background-color: #00f;
+            height: 300px;
+        }
+        .img-wrap2 img{
+            opacity: 0.5; /* 테스트용 */
+            /* 부모의 높이를 따라라 */
+            height: 100%;
+            /* 가로세로 비율을 맞춰주세요 (기본값) */
+            /* width: auto; */
+        }
+        /* 이미지의 부모의 크기를 바꾸고 이미지가 부모의 크기를 어떻게 따를지 설정 */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="img-wrap">
+            <img src="../images/smartbanner-01-01-pc.png" alt="원피스 할인 이벤트">
+        </div>
+        <div class="max-img">
+            <img src="../images/test-img.png" alt="">
+        </div>
+        <div class="img-wrap2">
+            <img src="../images/test-img.png" alt="">
+        </div>
+    </div>
+    <!-- //.wrap -->
+</body>
+</html>
