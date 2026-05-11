@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 실습예제</title>
+    <link rel="stylesheet" href="../reset.css">
+    <!-- 
+    grid
+    1. container에게 grid 선언 (container)
+    2. 행/열 줄/칸 개수, 크기 정하기 (container)
+    3. 암시적 그리드 선언 (생략 가능)(container)
+    4. 아이템 배치 (생략시 한 줄 한 칸)(item)
+    5. 여백
+    6. 정렬
+    -->
+    <style>
+        /* 모양 */
+        .wrap{
+            margin: 50px;
+        }
+        .grid-container{
+            background-color: #ccc;
+        }
+        .grid-container .item{
+            background-color: dodgerblue;
+        }
+
+        /* grid */
+        .grid-container{
+            display: grid;
+        }
+        /* grid item */
+        .grid-container .item{}
+        .grid-container .item:nth-child(1){
+        }
+        .grid-container .item:nth-child(2){
+        }
+        .grid-container .item:nth-child(3){
+        }
+        .grid-container .item:nth-child(4){
+        }
+        .grid-container .item:nth-child(5){
+        }
+        .grid-container .item:nth-child(6){
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="grid-container">
+            <div class="item">아이템1</div>
+            <div class="item">아이템2</div>
+            <div class="item">아이템3</div>
+            <div class="item">아이템4</div>
+            <div class="item">아이템5</div>
+            <div class="item">아이템6</div>
+            <div class="item">아이템7</div>
+            <div class="item">아이템8</div>
+        </div>
+    </div>
+</body>
+</html>

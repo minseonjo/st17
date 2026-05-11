@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 실습6 - column 방향과 position</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        /* 모양 */
+        .inner{background-color: #ccc;}
+        #top_nav_box{background-color: #fcc; box-sizing: border-box;}
+        #top_nav_box>div{box-sizing: border-box; padding: 0.5rem;}
+        #top_nav_box .top_logo{background-color: beige;}
+        #top_nav_box .top_category{background-color: dodgerblue;}
+        #top_nav_box .top_mypage{background-color: purple;}
+
+        /* 크기 */
+        #top_nav_box .top_logo{width: 100px;}
+        #top_nav_box .top_category{min-width: 600px; max-width: 700px;}
+        #top_nav_box .top_mypage{width: 150px;}
+
+        /* flex */
+        .inner{}
+        #top_nav_box{
+            display: flex;
+            /* 2 */
+            flex-direction: column;
+            /* 5 nowrap */
+            /* 6 */
+            /* 7 정렬 */
+            /* 주축 ↓ 교차축 → */
+            /* justify-content: flex-start; */
+            align-items: center;
+
+            /* 기준요소 #top_nav_box .top_mypage */
+            position: relative;
+        }
+        /* 3 확장 0 / 축소 1 */
+        /* 4 크기 flex-basis:auto; */
+        #top_nav_box .top_logo{}
+        #top_nav_box .top_category{}
+        #top_nav_box .top_mypage{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="inner">
+        <div class="top_nav_box" id="top_nav_box">
+            <div class="top_logo">로고</div>
+            <div class="top_category">카테고리</div>
+            <div class="top_mypage">마이페이지</div>
+        </div>
+    </div>
+</body>
+</html>

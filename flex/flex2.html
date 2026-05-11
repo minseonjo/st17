@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex2 - flex 컨테이너와 flex 아이템</title>
+    <!-- 
+    외부 파일 연결 
+    rel : 현재 html 파일과 연결하려고 하는 외부 파일과의 관계
+    -->
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .wrap{margin: 50px;}
+        .container{
+            /* 부모의 너비 다 가져오기 */
+            /* width: auto; */
+            /* padding: 1rem; */
+            background-color: #fcc;
+            box-sizing: border-box;
+        }
+        .item{
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+        .flex{
+            /* 1. flex 선언 */
+            /* flex box(flex 컨테이너) */
+            display: flex;
+            /* 
+            2. flex의 방향 설정 
+            주축의 방향은 flex-direction의 방향과 동일
+            */
+            /* flex-direction: row; 기본값 */
+            flex-direction: row;
+            /* flex-direction: column; */
+
+            /* 
+            5. flex-wrap 
+            만약에 item에 flex-shrink: 0; flex-grow: 0; 설정했을 때
+            부모의 크기보다 넘쳐나는 item 줄바꿈
+            */
+            /* 기본값 */
+            /* flex-wrap: nowrap; */
+            flex-wrap: wrap;
+
+            /* 6. gap flex 아이템 사이의 여백 관리 */
+            /* flex item과 컨테이너 사이에는 gap 들어가지 않는다 */
+            gap: 5px 10px;
+
+            /* 7. 아이템의 정렬 */
+        }
+        /* flex 컨테이너의 직계 자식은 flex 아이템 */
+        .flex .item{
+            /* 3. flex item 주축크기 확장/축소 결정 */
+            /* width: 50%; */
+            /* width: 25%; */
+            /* calc(값1 - 값2) */
+            /*
+            컨테이너에 gap을 지정했을 때 계산식
+            calc(아이템의 크기 - (gap * (단의 수 - 1)) / 단의 수);
+            */
+            /* 4. 아이템 크기 결정 */
+            width: calc(25% - (10px * (4 - 1)) / 4);
+            /* 아이템을 부모의 공간에 맞게 확장 */
+            flex-grow: 0; /* 기본값 */
+            /* 아이템을 부모의 공간에 맞게 축소 */
+            /* flex-shrink: 1; 기본값 */
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- .container>.item*4>{item$} -->
+        <div class="container flex">
+            <div class="item">Lorem, ipsum.</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+            <div class="item">item4</div>
+            <div class="item">Lorem, ipsum.</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+            <div class="item">item4</div>
+        </div>
+    </div>
+</body>
+</html>
