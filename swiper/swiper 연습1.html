@@ -38,6 +38,12 @@
         .visual-section .swiper{
             width: 100%;
         }
+        .visual-section .swiper-horizontal>.swiper-pagination-bullets,
+        .visual-section .swiper-pagination-bullets.swiper-pagination-horizontal,
+        .visual-section .swiper-pagination-custom,
+        .visual-section .swiper-pagination-fraction{
+            bottom: 24px;
+        }
         .visual-section .swiper .swiper-pagination-bullet{
             /* background-color: #fff; */
             background-color: transparent;
@@ -64,6 +70,31 @@
             width: 30px;
             opacity: 1;
         }
+        .visual-section .swiper-button-next,
+        .visual-section .swiper-button-prev{
+            color: #fff;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+            padding: 1rem 0.5rem;
+            opacity: 0.5;
+            /* 내 크기의 50%만큼 위로 */
+            transform: translate(0, -50%);
+        }
+        .visual-section .swiper-button-next:hover,
+        .visual-section .swiper-button-prev:hover{
+            opacity: 1;
+        }
+        .visual-section .swiper-button-next{
+            left: auto;
+            right: 50px;
+        }
+        .visual-section .swiper-button-prev{
+            left: 50px;
+            right: auto;
+        }
+        /* & : 현재 선택자가 위치한 상위 요소(부모 선택자) */
+        .visual-section .swiper-scrollbar .swiper-scrollbar-horizontal{
+            bottom: 0px;
+        }
     </style>
 </head>
 <body>
@@ -85,7 +116,6 @@
                 </div>
                 <div class="swiper-slide">Slide 2</div>
                 <div class="swiper-slide">Slide 3</div>
-                ...
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -108,7 +138,16 @@
         const swiper1 = new Swiper('.swiper1', {
             // Optional parameters
             direction: 'horizontal',
+            
+            // Infinite loop 무한 반복
             loop: true,
+
+            // Autoplay
+            // autoplay: {
+            //     // delay: 2500,
+            //     delay: 1000,
+            //     disableOnInteraction: false,
+            // },
 
             // If we need pagination
             pagination: {

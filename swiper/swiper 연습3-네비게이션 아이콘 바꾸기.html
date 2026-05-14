@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>swiper 기본</title>
+    <title>swiper 연습3 - 네비게이션 아이콘 바꾸기</title>
     <link rel="stylesheet" href="../reset.css">
     <!-- 플러그인 설치 -->
     <!-- swiper js css -->
@@ -35,8 +35,12 @@
         <div class="swiper-pagination"></div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev">
+            <img src="images/arrow_back_ios_48dp.png" alt="">
+        </div>
+        <div class="swiper-button-next">
+            <img src="images/arrow_forward_ios_48dp.png" alt="">
+        </div>
 
         <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div>
@@ -49,14 +53,16 @@
 
             // If we need pagination
             pagination: {
-                el: ".swiper-pagination",
-                type: "fraction",
+                el: '.swiper-pagination',
+                clickable: true,
             },
 
             // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
+                // 내가 이미지를 넣을 때
+                addIcons: false,
             },
 
             // And if we need scrollbar
