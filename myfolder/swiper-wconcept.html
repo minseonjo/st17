@@ -306,51 +306,8 @@
     </div>
     <!-- //.visual-section -->
     <!-- swiper 실행 -->
-    <script>
-        const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            direction: 'horizontal',
+    <!-- 외부 JavaScript 파일로 Swiper 초기화 및 Play/Pause 토글 기능 구현 -->
+    <script src="js/myscript.js"></script>
 
-            // 무한 반복
-            loop: true,
-
-            // 현재 슬라이드가 swiper 안에 가운데 오게끔
-            // swiper 시작할 때 1번 슬라이드 왼쪽에 마지막 슬라이드 표시
-            centeredSlides: true,
-
-            // 3번(3단)을 위해서 추가
-            // swiper 안에 몇 개 slide를 보여줄지 결정
-            slidesPerView: 3,
-
-            // 5번(여백)을 위해서 추가
-            // swiper에서는 아이템간 여백을 margin-right로 지정
-            // 단위 쓰지 X
-            spaceBetween: 20,
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                // 7 해결
-                // type: "bullets(기본값)", "fraction", "progressbar"
-                type: "progressbar",
-            },
-
-            // Navigation arrows
-            navigation: {
-                // 클래스명 바꿔도 무방
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-                // 내가 입력한 html img 태그 이미지 사용
-                addIcons: false,
-            },
-
-            // And if we need scrollbar
-            // progressbar일 때 삭제
-            // scrollbar: {
-            //     el: '.swiper-scrollbar',
-            // },
-        });
-    </script>
 </body>
 </html>
