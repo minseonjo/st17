@@ -1,31 +1,35 @@
-/* 공통 */
-.flex{display: flex;}
-.grid{display: grid;}
-.block{display: block;}
-/* .float>.item{float: left;} */
-
-/* 단배너 css */
-/* 단배너 공통 */
-.dan1>.item{width: 100%;}
-.dan2>.item{width: 50%;}
-.dan3>.item{width: 33.33%;}
-.dan4>.item{width: 25%;}
-
-.dan-section{}
-.dan-section .dan-container{
-    gap: 20px;
-    
+/* 테스트 후 삭제 */
+@import url(ub-variables.css);
+.card{
+    background-color: #cff;
+    box-sizing: border-box;
+    border: var(--border);
+    min-height: 300px;
+    opacity: 0.5;
+}
+.dan-section .flex{
     background-color: #f00;
     box-sizing: border-box;
     border: 1px solid #000;
 }
-.dan-container .item{
-    /* flex-grow: 0; flex-shrink: 0; flex-basis: auto; */
-    flex: none;
 
-    opacity: 0.5;
-    box-sizing: border-box;
-    border: 1px solid #00f;
+/* 공통 */
+/* .flex{display: flex;} */
+/* .grid{display: grid;} */
+/* .block{display: block;} */
+/* .float>.item{float: left;} */
+
+/* 단배너 css */
+/* 단배너 공통 */
+/* .dan1>.item{width: 100%;} */
+/* .dan2>.item{width: 50%;} */
+/* .dan3>.item{width: 33.33%;} */
+/* .dan4>.item{width: 25%;} */
+
+.dan-section{}
+.dan-section .flex{
+    /* flex-grow: 0; flex-shrink: 0; flex-basis: auto; */
+    /* flex: none; */
 }
 .dan-container .item .thumb{}
 .dan-container .item .thumb img{}

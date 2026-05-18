@@ -12,7 +12,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <!-- // PG크로스브라우징필수내용 -->
 
-    <title>dan</title>
+    <title>dan - grid-system 연습</title>
 	<link rel="stylesheet" href="">
     <link rel="stylesheet" href="/layout/basic/css/common.css"><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
     <link rel="stylesheet" href="/layout/basic/css/layout.css">
@@ -77,26 +77,30 @@
 				<!-- 여기서 작업 시작 -->
 				<link rel="stylesheet" href="/myfolder/css/ub-variables.css">
 				<link rel="stylesheet" href="/myfolder/css/ub-grid-system.css">
-				
+
 				<link rel="stylesheet" href="/myfolder/css/mystyle.css">
 				<section class="section dan-section">
-					<div class="flex dan-container dan3">
+					<div class="flex">
 						<!-- div.item.card*4>.thumb+.desc -->
-						<div class="item card">
-							<div class="thumb"><img src="/myfolder/images/main_banner01_pc.jpg" alt=""></div>
-							<div class="desc">Lorem, ipsum.</div>
+						<div class="item card col-4">
+							card1
 						</div>
-						<div class="item card">
-							<div class="thumb"><img src="/myfolder/images/main_banner02_pc.jpg" alt=""></div>
-							<div class="desc">Lorem, ipsum dolor.</div>
+						<div class="item card col-4">
+							card2
 						</div>
-						<div class="item card">
-							<div class="thumb"><img src="myfolder/images/main_banner03_pc.jpg" alt=""></div>
-							<div class="desc">Lorem.</div>
+						<div class="item card col-4">
+							card3
 						</div>
-						<div class="item card">
-							<div class="thumb"><img src="myfolder/images/main_banner01_pc.jpg" alt=""></div>
-							<div class="desc">Lorem, ipsum dolor.</div>
+					</div>
+				</section>
+				<section class="section dan-section">
+					<div class="flex">
+						<!-- div.item.card*4>.thumb+.desc -->
+						<div class="item card col-5">
+							card1
+						</div>
+						<div class="item card col-7">
+							card2
 						</div>
 					</div>
 				</section>
