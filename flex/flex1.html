@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex1</title>
+    <!-- 
+    외부 파일 연결 
+    rel : 현재 html 파일과 연결하려고 하는 외부 파일과의 관계
+    -->
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .wrap{margin: 50px;}
+        .container{
+            /* 부모의 너비 다 가져오기 */
+            /* width: auto; */
+            padding: 1rem;
+            background-color: #fcc;
+        }
+        .item{
+            border: 1px solid #000;
+            width: 100px;
+        }
+
+        /* 방법1 : float */
+        .float .item{
+            float: left;
+        }
+        /* float 밑의 item들을 float 컨테이너가 인식할 수 있게 문제 해결 : clearfix */
+        .float::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        /* 방법2 : inline-block */
+        .inline-block .item{
+            display: inline-block;
+            font-size: 1rem;
+        }
+        .inline-block{
+            /* 여백은 사라지지만, font-size는 후손이 상속받아 문제 발생 */
+            font-size: 0;
+        }
+        
+        /* 방법3 : flex */
+        .flex{
+            display: flex;
+        }
+
+        .flex .item{}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- .container>.item*4>{item$} -->
+        <!-- <div class="container float"> -->
+        <!-- <div class="container inline-block"> -->
+        <div class="container flex">
+            <div class="item">item1</div>
+            <div class="item">item2</div>
+            <div class="item">item3</div>
+            <div class="item">item4</div>
+        </div>
+    </div>
+</body>
+</html>

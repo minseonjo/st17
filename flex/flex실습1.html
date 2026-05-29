@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 실습1 - 수직 수평 가운데 정렬</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .visual-section{
+            display: flex;
+            background-color: #ffc;
+            /* viewport를 가득 채운 visual-section */
+            box-sizing: border-box;
+            /* 스크롤바를 제외한 크기 */
+            width: 100%;
+            height: 100vh;
+            /* 2. 방향 flex-direction: row; */
+            /* 5. 줄바꿈 */
+            /* 6. 여백 */
+            /* 7. 정렬 */
+            /* justify-content: flex-start; */
+            /* align-items: stretch; */
+            justify-content: center;
+            align-items: center;
+        }
+        .visual-section .text-wrap{
+            /* flex item */
+            background-color: #cff;
+            /* 3. 확장/축소 */
+            /* flex-grow: 0; */
+            /* flex-shrink: 1; */
+            flex: none;
+            /* 4. 아이템의 크기 */
+            width: 50%;
+            min-width: 300px;
+            max-width: 500px;
+            box-sizing: border-box;
+            padding: 1rem 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="visual-section">
+            <div class="text-wrap">
+                <div class="title">Title</div>
+                <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi vitae quas recusandae optio, quod eos vero in impedit aperiam commodi!</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

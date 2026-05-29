@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 지정 속성(변수)</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        :root{
+            --primary-color:#fcc;
+            --section-title-color:var(--primary-color);
+            --gray1:#ccc;
+            --text-color:#333;
+            --text-color-point:var(--primary-color);
+        }
+        .card{
+            border: 1px solid var(--gray1);
+        }
+        .t1{
+            background-color: var(--primary-color);
+        }
+        .t2, .t3{
+            color: var(--text-color);
+        }
+        .t4{
+            color: var(--text-color-point);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card t1">card</div>
+        <div class="card t2">card</div>
+        <div class="card t3">card</div>
+        <div class="card t4">card</div>
+    </div>
+</body>
+</html>

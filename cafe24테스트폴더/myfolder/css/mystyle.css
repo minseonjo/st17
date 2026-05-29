@@ -1,0 +1,159 @@
+/* 테스트 후 삭제 */
+@import url(ub-variables.css);
+.card{
+    /* background-color: #cff;
+    box-sizing: border-box;
+    border: var(--border);
+    min-height: 300px;
+    opacity: 0.5; */
+}
+.dan-section .flex{
+    /* background-color: #f00;
+    box-sizing: border-box;
+    border: 1px solid #000; */
+}
+
+.ub-style{
+    background-color: #ccc;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+/* .ub-style이 연속으로 나올 때 동생에게 여백 */
+.ub-style + .ub-style{
+    margin-top: 50px;
+}
+
+/* 첫 번째 단의 왼쪽 여백, 마지막 단의 오른쪽 여백 없애기 */
+/* 
+↓ 단 썸네일의 크기가 달라지는 문제 때문에 padding 값 수정 문제 발생
+*/
+/* .dan-section .item:first-child{
+    padding-left: 0;
+}
+.dan-section .item:last-child{
+    padding-right: 0;
+} */
+
+/* ub-grid-system의 속성 선택자([class*="col-"]{}) 무력화하기 위해 우선순위 점수 높임 */
+/* html의 flex 컨테이너에게 .gap-으로 지정하세요 */
+.dan-section .flex .item[class*="col-"]{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 공통 */
+/* .flex{display: flex;} */
+/* .grid{display: grid;} */
+/* .block{display: block;} */
+/* .float>.item{float: left;} */
+
+/* 단배너 css */
+/* 단배너 공통 */
+/* .dan1>.item{width: 100%;} */
+/* .dan2>.item{width: 50%;} */
+/* .dan3>.item{width: 33.33%;} */
+/* .dan4>.item{width: 25%;} */
+
+.dan-section{}
+.dan-section .flex{
+    /* flex-grow: 0; flex-shrink: 0; flex-basis: auto; */
+    /* flex: none; */
+}
+
+.dan-section .flex>.item{
+    flex: auto;
+}
+
+.dan-section .item .thumb{}
+.dan-section .item .thumb .xans-smart-banner-admin{
+    margin-bottom: 0;
+}
+.dan-section .item .thumb img{}
+.dan-section .item .desc{}
+
+/* .section.ub-style 스타일 */
+.ub-style.section_full{
+    /* 본인 브랜드 색상을 사용하세요 변수 사용을 권해요 var(--section.bg) */
+    background-color: var(--section-bg);
+}
+.ub-style .ub-style-inner{}
+
+/* .section이 브라우저를 다 차지할 때 정렬을 위한 .ub-style-inner */
+/* .section에 .section_full 있을 때만 동작 */
+@media (min-width: 1024px){
+    #contents > .section_full.ub-style .ub-style-inner{
+        max-width:1420px;
+        width:92%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+/* .ub-style .main_title */
+.ub-style .main_title{}
+.ub-style .main_title.flex{
+    align-items: end;
+    justify-content: start;
+}
+/* .main_title에 .flex 추가되어 있을 때만 */
+.ub-style .main_title.flex .main_title_txt02{
+    /* margin-left: var(--space-xs); */
+    margin-left: 10px;
+    margin-top: 0;
+}
+.ub-style .main_title .main_title_txt01{
+    /* font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000; */
+}
+.ub-style .main_title .main_title_txt02{
+    /* font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    color: #999; */
+}
+
+/* 미디어쿼리 */
+/*
+1024px 이하에서 
+1. dan-section 일렬로 표시되고
+    문제 1-1 : 브라우저 크기가 줄어들면 따라서 줄어드는 이미지 크기
+    문제 1-2 : .col-4 -> ub-grid-system 클래스명 사용
+2. 화면에 모바일에서 1.2개 col-md-10    -> html 추가
+    태블릿에서 1.8개 col-lg-7   -> html 추가
+    문제 2-1 : .flex한테 부모의 너비를 따라라
+3. 부드러운 스크롤링
+    문제 3-1 : 스크롤바 표시
+    문제 3-2 : css로 부드러운 스크롤링
+    -> 부모한테 주기
+*/
+@media (max-width: 1024px){
+    /* .dan-section */
+    .dan-section .flex{
+        /* 문제 2-1 해결 */
+        width: 100%;
+
+        /* 문제 3-1 해결 */
+        /* 넘쳐나면 스크롤바 표시 */
+        /* 부드러운 스크롤링을 위한 전제 조건 */
+        overflow-x: auto;
+
+        /* 문제 3-2 해결 */
+        /* 부드러운 스크롤링 css */
+        scroll-behavior: smooth;
+        /* 스크롤될 때 요소의 snap 타입(부드러운 스크롤링 되다가 어느 지점에서 멈출 때) */
+        /* mandatory : 무조건 스냅 포인트에 맞춤 */
+        scroll-snap-type: x mandatory;
+    }
+    .dan-section .flex .item{
+        /* 문제 1-1 해결 */
+        flex-shrink: 0;
+
+        /* 문제 3-2 해결 */
+        /* 컨테이너와 아이템의 스크롤 snap 정렬 */
+        scroll-snap-align: center;
+    }
+}
+
+@media(max-width: 768px){
+}

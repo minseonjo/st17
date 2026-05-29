@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid3 - 정렬, 배치</title>
+    <link rel="stylesheet" href="../reset.css">
+    <!-- 
+    grid
+    1. container에게 grid 선언 (container)
+    2. 행/열 줄/칸 개수, 크기 정하기 (container)
+    3. 암시적 그리드 선언 (생략 가능)(container)
+    4. 아이템 배치 (생략시 한 줄 한 칸)(item)
+    5. 여백
+    6. 정렬
+    -->
+    <style>
+        /* 모양 */
+        .wrap{
+            margin: 50px;
+        }
+        .grid-container{
+            background-color: #ccc;
+            min-height: 500px;
+        }
+        .grid-container .item{
+            background-color: dodgerblue;
+            box-sizing: border-box;
+            border: 1px solid magenta;
+        }
+
+        /* grid */
+        .grid-container{
+            display: grid;
+            /* 2 */
+            /* 정렬을 위해 아이템의 합이 컨테이너보다 작게 지정 */
+            /* grid-template-rows: repeat(3, 100px); */
+            grid-template-columns: repeat(3, 30%);
+            /* 
+            4 정렬/배치 
+            컨테이너 안에서 아이템의 정렬/배치
+            */
+            /* 수평정렬/배치 */
+            /* 수평정렬 start center end */
+            justify-content: start;
+            /* 수평배치 양끝정렬 space-between space-around space-evenly */
+            justify-content: space-between;
+            /* 정렬/배치의 기본값 */
+            justify-content: normal;
+            /* block축의 크기를 지정하지 않으면 stretch */
+            align-content: normal;
+            /* block축의 크기를 지정하면 start */
+            grid-template-rows: repeat(3, 100px);
+            align-content: end;
+
+            /* 
+            3 여백 gap(container), margin(item) 
+            justify-, align- 값이 between-*으로 설정하면 무시됨
+            */
+
+            /* -items 그리드 영역 안에서 정렬 */
+            justify-items: center;
+            align-items: center;
+        }
+        /* grid item */
+        .grid-container .item{
+        }
+        .grid-container .item:nth-child(1){
+            /* 특정 요소만 다르게 정렬/배치 */
+            justify-self: start;
+            align-self: start;
+        }
+        .grid-container .item:nth-child(2){
+        }
+        .grid-container .item:nth-child(3){
+        }
+        .grid-container .item:nth-child(4){
+        }
+        .grid-container .item:nth-child(5){
+        }
+        .grid-container .item:nth-child(6){
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="grid-container">
+            <div class="item">아이템1</div>
+            <div class="item">아이템2</div>
+            <div class="item">아이템3</div>
+            <div class="item">아이템4</div>
+            <div class="item">아이템5</div>
+            <div class="item">아이템6</div>
+            <div class="item">아이템7</div>
+            <div class="item">아이템8</div>
+        </div>
+    </div>
+</body>
+</html>
