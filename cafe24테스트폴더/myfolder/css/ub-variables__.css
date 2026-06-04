@@ -36,26 +36,8 @@
   --section-padding-top-bottom:40px;
   --section-main-banner-padding:16px;
 
-
   /* border */
-  --border:1px solid #000;
-}
-
-.ub-style.main_product_category{
-  --tab-row-main-title-margin-bottom:40px;
-  --tab-row-main-title-txt02-margin-left:0px;
-  --tab-row-main-title-txt02-margin-top:8px;
-  --tab-row-tabmenu-margin-topt:0px;
-  --tab-row-tabmenu-item-margin-left:0px;
-  --tab-row-tabmenu-item-margin-bottom:16px;
-  --tab-row-tabmenu-item-padding:5.6% 4%; 
-  --tab-row-tabmenu-item-active-bgc:transaprent;
-  --tab-row-tabmenu-1col-width:18%;
-  --tab-row-tabmenu-2col-width:24%;
-  --tab-row-tabmenu-1col-content-list-width:82%;
-  --tab-row-tabmenu-2col-content-list-width:76%;
-  --tab-column-main-title-margin-bottom:40px;
-  --tab-column-main-title-txt02-margin-top:20px;
+  --border: 1px solid #000;
 }
 
   

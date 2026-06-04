@@ -1,159 +1,286 @@
-/* 테스트 후 삭제 */
-@import url(ub-variables.css);
-.card{
-    /* background-color: #cff;
-    box-sizing: border-box;
-    border: var(--border);
-    min-height: 300px;
-    opacity: 0.5; */
-}
-.dan-section .flex{
-    /* background-color: #f00;
-    box-sizing: border-box;
-    border: 1px solid #000; */
-}
+/* 테스트후 삭제 */
 
 .ub-style{
-    background-color: #ccc;
-    border: 1px solid #000;
-    box-sizing: border-box;
+  background-color: #ccc;
+  border: 1px solid #000;
+  box-sizing: border-box;
 }
-/* .ub-style이 연속으로 나올 때 동생에게 여백 */
+/* .ub-style 연속으로 나올때 동생에게 여백 */
 .ub-style + .ub-style{
-    margin-top: 50px;
+  margin-top:50px;
+}
+/* 탭 최상위 container  */
+.ub-style.main_product_category{
+  box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: #cff;
+}
+/*(탭메뉴버튼과 섹션타이틀) 의 컨테이너 */
+.ub-style.main_product_category .main_product_inner{
+   box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: #fcf;
 }
 
-/* 첫 번째 단의 왼쪽 여백, 마지막 단의 오른쪽 여백 없애기 */
-/* 
-↓ 단 썸네일의 크기가 달라지는 문제 때문에 padding 값 수정 문제 발생
-*/
-/* .dan-section .item:first-child{
-    padding-left: 0;
+/* 탭UI의 탭컨텐츠 컨테이너 */
+.ub-style.main_product_category .content_list{
+     box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: #ffc;
 }
-.dan-section .item:last-child{
-    padding-right: 0;
-} */
 
-/* ub-grid-system의 속성 선택자([class*="col-"]{}) 무력화하기 위해 우선순위 점수 높임 */
-/* html의 flex 컨테이너에게 .gap-으로 지정하세요 */
-.dan-section .flex .item[class*="col-"]{
-    padding-left: 0;
-    padding-right: 0;
-}
+
 
 /* 공통 */
-/* .flex{display: flex;} */
-/* .grid{display: grid;} */
-/* .block{display: block;} */
-/* .float>.item{float: left;} */
+/* 타이포그라피 */
+input, select, textarea, body, code, button {
+    font-family: "Poppins", "Pretendard Variable", Pretendard, Arial, sans-serif !important;
+    /* font-family: "Pretendard Variable", Pretendard, Arial, sans-serif !important; */
+}
 
-/* 단배너 css */
+
+
+/* 단배너 CSS */
 /* 단배너 공통 */
-/* .dan1>.item{width: 100%;} */
-/* .dan2>.item{width: 50%;} */
-/* .dan3>.item{width: 33.33%;} */
-/* .dan4>.item{width: 25%;} */
-
 .dan-section{}
-.dan-section .flex{
-    /* flex-grow: 0; flex-shrink: 0; flex-basis: auto; */
-    /* flex: none; */
+.dan-section .flex > .item{
+  flex:auto;
 }
 
-.dan-section .flex>.item{
-    flex: auto;
+.dan-section .item {
+  /* flex:none; */
 }
 
-.dan-section .item .thumb{}
+/* 
+단 썸네일의 크기가 달라지는 문제때문에 padding값 수정 문제 발생
+*/
+/* .dan-section .item:first-child{padding-left:0;}  
+.dan-section .item:last-child{padding-right: 0;} */
+/* html의 flex 컨테이너에게 .gap- 으로 지정하세요  */
+.dan-section .flex .item[class*="col-"]{
+  padding-left:0 ;
+  padding-right: 0;
+}
+
+.dan-section .item .thumb {}
 .dan-section .item .thumb .xans-smart-banner-admin{
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
+
 .dan-section .item .thumb img{}
-.dan-section .item .desc{}
+.dan-section .item .desc {}
 
 /* .section.ub-style 스타일 */
 .ub-style.section_full{
-    /* 본인 브랜드 색상을 사용하세요 변수 사용을 권해요 var(--section.bg) */
-    background-color: var(--section-bg);
+  /* 본인브랜드색상을 사용하세요 변수 사용을 권해요 var(--section-bg)  */
+  background-color: var(--section-bg);
 }
 .ub-style .ub-style-inner{}
 
-/* .section이 브라우저를 다 차지할 때 정렬을 위한 .ub-style-inner */
-/* .section에 .section_full 있을 때만 동작 */
-@media (min-width: 1024px){
-    #contents > .section_full.ub-style .ub-style-inner{
-        max-width:1420px;
-        width:92%;
-        margin-left:auto;
-        margin-right:auto;
-    }
+/* .section이 브라우저를 다 차지할 때 정렬을 위한  .ub-style-inner*/
+@media (min-width:1024px){
+	#contents > .section_full.ub-style .ub-style-inner {
+    max-width:1420px;
+    width:92%;
+    margin-left:auto;
+    margin-right:auto;
+  }
 }
-/* .ub-style .main_title */
-.ub-style .main_title{}
-.ub-style .main_title.flex{
-    align-items: end;
-    justify-content: start;
+
+/*  .ub-style  .main_title */
+.ub-style .main_title.main_title_direction_row{
+   display: flex;
+   justify-self: start;
+   align-items: end;
 }
-/* .main_title에 .flex 추가되어 있을 때만 */
-.ub-style .main_title.flex .main_title_txt02{
-    /* margin-left: var(--space-xs); */
-    margin-left: 10px;
-    margin-top: 0;
+.ub-style .main_title_direction_row [class*="main_title_"]:last-of-type{
+   margin-left: 10px;
 }
-.ub-style .main_title .main_title_txt01{
-    /* font-size: 32px;
-    font-weight: 700;
-    line-height: 1;
-    color: #000; */
+.ub-style .main_title.main_title_direction_column{
+  display: block;
 }
-.ub-style .main_title .main_title_txt02{
-    /* font-size: 20px;
-    font-weight: 400;
-    line-height: 1;
-    color: #999; */
+.ub-style .main_title_direction_column [class*="main_title_"]:last-of-type{
+  margin-top:10px;
+  margin-left:0px;
 }
+
+/* TAB UI */
+/* 메인분류 중 선택된 메인분류의 상품 목록을 탭UI 표시 */
+/* 탭 최상위 container  */
+.ub-style.main_product_category{
+  display: flex;
+}
+
+/* .tab-direction-row */
+#contents .ub-style.main_product_category.tab-direction-row{
+  flex-direction: row;
+}
+
+.ub-style.main_product_category.tab-direction-row  .main_product_inner{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.ub-style.main_product_category.tab-direction-row.tabmenu-1col  .main_product_inner{
+  width:var(----tab-row-tabmenu-1col-width,18%);
+}
+.ub-style.main_product_category.tab-direction-row.tabmenu-2col  .main_product_inner{
+width:var(----tab-row-tabmenu-2col-width,24%);
+}
+.ub-style.main_product_category.tab-direction-row .main_title{
+  display: block;
+  margin-bottom: var(--tab-row-main-title-margin-bottom,16px);
+}
+.ub-style.main_product_category.tab-direction-row  .main_title .main_title_txt02{
+  margin-left:var( --tab-row-main-title-txt02-margin-left, 0px);
+  margin-top:var( --tab-row-main_title-txt02-margin-top, 8px);
+}
+.ub-style.main_product_category.tab-direction-row   .main_product_tab{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top:var(--tab-row-tabmenu-margin-top,0px);
+  width: 100%;
+}
+.ub-style.main_product_category.tab-direction-row.tabmenu-2col   .main_product_tab li{
+  width: 50%;
+  margin-bottom:calc(var(--tab-row-tabmenu-item-margin-bottomt, 16px) * 2 );
+  margin-right: 0;;
+}
+.ub-style.main_product_category.tab-direction-row  .main_product_tab li{
+  margin-left:var(--tab-row-tabmenu-item-margin-left, 0px);
+  margin-bottom:var(--tab-row-tabmenu-item-margin-bottomt, 16px);
+  width:100%;
+}
+.ub-style.main_product_category.tab-direction-row  .main_product_tab li.active{
+  background-color: var(--tab-row-tabmenu-item-active-bgc, transparent);
+}
+
+.ub-style.main_product_category.tab-direction-row.box  .main_product_tab li .button{
+   width:100%;
+   display: block;
+   text-align: left;
+}
+.ub-style.main_product_category.tab-direction-row  .main_product_tab li .button.active{
+    background-color: var(--tab-row-tabmenu-item-active-bgc, transparent);
+}
+.ub-style.main_product_category.tab-direction-row.tabmenu-1col  .content_list{
+  width:var(--tab-row-tabmenu-1col-content-list-width, 82%);
+  flex-grow: 1;
+}
+
+.ub-style.main_product_category.tab-direction-row.tabmenu-2col .content_list{
+  width:var( --tab-row-tabmenu-2col-content-list-width,76%);
+  flex-grow: 1;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+
+/*.tab-direction-column  */
+#contents .ub-style.main_product_category.tab-direction-column{
+  flex-direction: column;
+}
+.ub-style.main_product_category.tab-direction-column .main_product_tab li{
+  width:auto;
+  margin-left:16px;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap .main_product_inner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap  .main_title{
+  display: flex;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap .main_product_tab{
+  display: flex;
+}
+
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap  .main_title_txt01{
+  margin-bottom: 0;
+   margin-right:0;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_nowrap  .main_title_txt02{
+  margin-bottom: 0;
+   margin-left:16px;
+}
+
+.ub-style.main_product_category.tab-direction-column.main_product_inner_wrap .main_product_inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+.ub-style.main_product_category.tab-direction-column.main_product_inner_wrap  .main_title{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items:center;
+  margin-bottom:var(  --tab-column-main-title-margin-bottom,40px);
+}
+
+.ub-style.main_product_category.tab-direction-column.main_product_inner_wrap  .main_title_txt02{
+  margin-top: var(--tab-column-main-title-txt02-margin-top,8px);
+   margin-left:0;
+}
+
+
+
+
+.ub-style.main_product_category .main_product_inner .main_title{}
+.ub-style.main_product_category .main_product_inner .main_title .main_title_txt01{}
+.ub-style.main_product_category .main_product_inner .main_title .main_title_txt02{}
+.ub-style.main_product_category .main_product_inner .main_product_tab{}
+.ub-style.main_product_category .main_product_inner .main_product_tab li{}
+.ub-style.main_product_category .main_product_inner .main_product_tab li .button{}
+/* 선택된 메뉴 */
+.ub-style.main_product_category .main_product_inner .main_product_tab li.active .button{}
+.ub-style.main_product_category .main_product_inner .main_product_tab li .button.active{}
+
+/* 탭UI의 탭컨텐츠 컨테이너 */
+.ub-style.main_product_category .content_list{}
+.ub-style.main_product_category .content_list .tabcontent{}
+/* 선택된 탭컨텐츠 */
+.ub-style.main_product_category .content_list .tabcontent.active{}
+
+
+
 
 /* 미디어쿼리 */
-/*
-1024px 이하에서 
-1. dan-section 일렬로 표시되고
-    문제 1-1 : 브라우저 크기가 줄어들면 따라서 줄어드는 이미지 크기
-    문제 1-2 : .col-4 -> ub-grid-system 클래스명 사용
-2. 화면에 모바일에서 1.2개 col-md-10    -> html 추가
-    태블릿에서 1.8개 col-lg-7   -> html 추가
-    문제 2-1 : .flex한테 부모의 너비를 따라라
-3. 부드러운 스크롤링
-    문제 3-1 : 스크롤바 표시
-    문제 3-2 : css로 부드러운 스크롤링
-    -> 부모한테 주기
-*/
-@media (max-width: 1024px){
-    /* .dan-section */
-    .dan-section .flex{
-        /* 문제 2-1 해결 */
-        width: 100%;
 
-        /* 문제 3-1 해결 */
-        /* 넘쳐나면 스크롤바 표시 */
-        /* 부드러운 스크롤링을 위한 전제 조건 */
-        overflow-x: auto;
+@media (max-width:1024px){
+  /* .dan-section */
+  .dan-section .flex{
+    width:100%;
+    /* 3 문제1 */
+    /* 부드러운 스크롤링을 위한 전제 조건 */
+    overflow-x: auto;
 
-        /* 문제 3-2 해결 */
-        /* 부드러운 스크롤링 css */
-        scroll-behavior: smooth;
-        /* 스크롤될 때 요소의 snap 타입(부드러운 스크롤링 되다가 어느 지점에서 멈출 때) */
-        /* mandatory : 무조건 스냅 포인트에 맞춤 */
-        scroll-snap-type: x mandatory;
-    }
-    .dan-section .flex .item{
-        /* 문제 1-1 해결 */
-        flex-shrink: 0;
-
-        /* 문제 3-2 해결 */
-        /* 컨테이너와 아이템의 스크롤 snap 정렬 */
-        scroll-snap-align: center;
-    }
+    /* 3 문제2*/
+    /* 3 문제2 부드러운 스크롤링 css */
+    scroll-behavior: smooth;
+    /* 3 문제2 스크롤될 때 요소가 snap 타입  */
+    scroll-snap-type: x mandatory;
+  }
+  .dan-section .flex .item{
+    /* 1 문제1 해결 */
+    flex-shrink: 0;
+    /* 3 문제2 컨테이너와 아이템의 스크롤 snap 정렬 */
+    scroll-snap-align: center;
+  }
 }
 
-@media(max-width: 768px){
+
+@media (max-width:768px){
+
 }
